@@ -1,13 +1,15 @@
+def math(first_card, second_card)
+  sum = (first_card.to_i + second_card.to_i)
+end
+
 puts "Please enter your first card"
-
+first_card = gets.chomp
 puts "Please enter your second card"
-
+second_card = gets.chomp
 puts "Please enter the dealer's card"
-
-J = 10
-Q = 10
-K = 10
-
+dealer_card = gets.chomp.to_i
+user_total = math(first_card, second_card)
+puts "#{user_total}"
 hard = {"5" => ["H","H","H","H","H","H","H","H","H","H"],
         "6" => ["H","H","H","H","H","H","H","H","H","H"],
         "7" => ["H","H","H","H","H","H","H","H","H","H"],
