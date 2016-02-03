@@ -1,5 +1,3 @@
-require 'byebug'
-
 def math_stuff(first_card, second_card)
   sum = (first_card.to_i) + (second_card.to_i)
   return sum.to_s
@@ -69,14 +67,25 @@ if dealer_card == "A"
 else
   dealer_card.to_i
 end
-# byebug
+
+response = ""
+
 if first_card == second_card
-  puts "#{pair[user_total][(dealer_card.to_i - 2)]}"
+  response = "#{pair[user_total][(dealer_card.to_i - 2)]}"
 elsif first_card = "11" || second_card = "11"
-  puts "#{soft[user_total][(dealer_card.to_i - 2)]}"
+  response = "#{soft[user_total][(dealer_card.to_i - 2)]}"
 else
-  puts "#{hard[user_total][(dealer_card.to_i - 2)]}"
+  response = "#{hard[user_total][(dealer_card.to_i - 2)]}"
 end
 
-
-puts "#{user_total}"
+if response == "H"
+  puts "You should hit"
+elsif response == "S"
+  puts "You should stand"
+elsif response == "P"
+  puts "You should split"
+elsif response == "Dh"
+  puts "You should double if possible, otherwise hit"
+else
+  puts "You should double if possible, otherwise stand"
+end
