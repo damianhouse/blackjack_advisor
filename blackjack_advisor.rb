@@ -1,5 +1,3 @@
-require 'byebug'
-
 def math_stuff(first_card, second_card)
   sum = (first_card.to_i) + (second_card.to_i)
   return sum.to_s
