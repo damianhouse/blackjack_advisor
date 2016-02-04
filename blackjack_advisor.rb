@@ -1,3 +1,5 @@
+require 'byebug'
+
 def math_stuff(first_card, second_card)
   sum = (first_card.to_i) + (second_card.to_i)
   return sum.to_s
@@ -50,6 +52,36 @@ second_card = gets.chomp.upcase
 puts "Please enter the dealer's card"
 dealer_card = gets.chomp.upcase
 
+if first_card == "A" || first_card == "ACE"
+  first_card = "11"
+elsif first_card == "J" || first_card == "JACK"
+  first_card = "10"
+elsif first_card == "Q" || first_card == "QUEEN"
+  first_card = "10"
+else first_card == "K" || first_card == "KING"
+  first_card = "10"
+end
+
+if second_card == "A" || second_card == "ACE"
+  second_card = "11"
+elsif second_card == "J" || second_card == "JACK"
+  second_card = "10"
+elsif second_card == "Q" || second_card == "QUEEN"
+  second_card = "10"
+else second_card == "K" || second_card == "KING"
+  second_card = "10"
+end
+
+if dealer_card == "A" || dealer_card == "ACE"
+  dealer_card = "11"
+elsif dealer_card == "J" || dealer_card == "JACK"
+  dealer_card = "10"
+elsif dealer_card == "Q" || dealer_card == "QUEEN"
+  dealer_card = "10"
+else dealer_card == "K" || dealer_card == "KING"
+  dealer_card = "10"
+end
+
 if (first_card && second_card) == "A"
   user_total = "22"
 elsif first_card == "A"
@@ -60,12 +92,6 @@ elsif second_card == "A"
   user_total = math_stuff(first_card, second_card)
 else
   user_total = math_stuff(first_card, second_card)
-end
-
-if dealer_card == "A"
-  dealer_card = "11"
-else
-  dealer_card.to_i
 end
 
 response = ""
